@@ -69,3 +69,36 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+
+/* C U S T O M - Movie Grid
+-------------------------------------------------- */
+.content-wrap {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.movie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 1rem;
+    grid-row-gap: 2rem;
+    margin: 75px auto;
+    width: 100%;
+}
+
+.movie-grid-item img {
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.favorite-site-link-container a img {
+    vertical-align: middle;
+    width: 100%;
+    opacity: 0.8;
+    z-index: 1;
+}
