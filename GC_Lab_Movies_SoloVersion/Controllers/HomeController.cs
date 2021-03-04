@@ -1,4 +1,5 @@
 ﻿using GC_Lab_Movies_SoloVersion.Models;
+using GC_Lab_Movies_SoloVersion.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,6 +13,7 @@ namespace GC_Lab_Movies_SoloVersion.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly MovieDAL movieDAL = new MovieDAL();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,7 +22,23 @@ namespace GC_Lab_Movies_SoloVersion.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<SingleMovieViewModel> movieListTest = new List<SingleMovieViewModel>();
+
+            for (int i = 9622; i < 9632; i++)
+            {
+                SingleMovieViewModel singleMovie = new SingleMovieViewModel()
+                {
+                    MovieModel = movieDAL.GetMovieById(i),
+                    BaseURL = movieDAL.GetBaseURL(),
+                    ImageSizeParam = movieDAL.GetImageSizeParamFull() // not sure where the image size decision should be made.
+                };
+
+                movieListTest.Add(singleMovie);
+            }
+
+
+
+            return View(movieListTest);
         }
 
         public IActionResult Privacy()
