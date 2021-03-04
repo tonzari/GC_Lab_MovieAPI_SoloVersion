@@ -61,6 +61,17 @@ namespace GC_Lab_Movies_SoloVersion.Models
             return config.images.base_url;
         }
 
+        /// <summary>
+        /// The intention of these methods is to make retrieving images easier.
+        /// In the controller you can choose one of the methods below to set you image size.
+        /// In your view, all you have to do is call the BuildImageUrl method (or whatever it may be named).
+        /// If you want to use images from the movie database, you need 3 parts:
+        /// base url + size parameter + file name
+        /// Each one is a string
+        /// This section handles retrieving the size parameter strings specifically for "posters".
+        /// Currently, the API offers sizes like: w500, w700
+        /// </summary>
+        #region IMAGE_SIZE_PARAMETERS
         public string GetImageSizeParamOriginal()
         {
             ApiConfigModel config = GetConfigInfo();
@@ -124,4 +135,5 @@ namespace GC_Lab_Movies_SoloVersion.Models
             return resolutionSelection;
         }
     }
+    #endregion
 }
