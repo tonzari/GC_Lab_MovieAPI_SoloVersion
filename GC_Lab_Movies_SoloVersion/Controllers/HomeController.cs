@@ -30,7 +30,7 @@ namespace GC_Lab_Movies_SoloVersion.Controllers
                 {
                     MovieModel = movieDAL.GetMovieById(i),
                     BaseURL = movieDAL.GetBaseURL(),
-                    ImageSizeParam = movieDAL.GetImageSizeParamFull() // not sure where the image size decision should be made.
+                    ImageSizeParam = movieDAL.GetImageSizeParamXSmall() // not sure where the image size decision should be made.
                 };
 
                 movieListTest.Add(singleMovie);

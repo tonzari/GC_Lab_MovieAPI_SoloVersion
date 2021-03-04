@@ -1,8 +1,14 @@
 ﻿@model List<GC_Lab_Movies_SoloVersion.ViewModels.SingleMovieViewModel>
 
-@foreach (var movie in Model)
-{
-    <h1>@movie.MovieModel.title</h1>
-    <p>@movie.MovieModel.overview</p>
-    <img src="@movie.BuildImageUrl()" alt="Alternate Text" />
-}
+<div class="container mt-3">
+    <div class="row">
+        @foreach (var movie in Model)
+        {
+        <div class="col-lg-2">
+            @*<h1>@movie.MovieModel.title</h1>
+            <p>@movie.MovieModel.overview</p>*@
+            <img src="@movie.BuildImageUrl()" alt="Alternate Text" />
+        </div>
+        }
+    </div>
+</div>

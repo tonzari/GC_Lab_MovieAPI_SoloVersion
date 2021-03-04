@@ -61,11 +61,67 @@ namespace GC_Lab_Movies_SoloVersion.Models
             return config.images.base_url;
         }
 
-        public string GetImageSizeParamFull()
+        public string GetImageSizeParamOriginal()
         {
             ApiConfigModel config = GetConfigInfo();
-            string highestResolution = config.images.poster_sizes.Last();
-            return highestResolution;
+            string resolutionSelection = config.images.poster_sizes.Last();
+            return resolutionSelection;
+        }
+
+        public string GetImageSizeParamXXLarge()
+        {
+            ApiConfigModel config = GetConfigInfo();
+            int optionsCount = config.images.poster_sizes.Length;
+            string resolutionSelection = config.images.poster_sizes[optionsCount];
+            return resolutionSelection;
+        }
+
+        public string GetImageSizeParamXLarge()
+        {
+            ApiConfigModel config = GetConfigInfo();
+            int optionsCount = config.images.poster_sizes.Length;
+            string resolutionSelection = config.images.poster_sizes[optionsCount - 1];
+            return resolutionSelection;
+        }
+
+        public string GetImageSizeParamLarge()
+        {
+            ApiConfigModel config = GetConfigInfo();
+            int optionsCount = config.images.poster_sizes.Length;
+            string resolutionSelection = config.images.poster_sizes[optionsCount - 2];
+            return resolutionSelection;
+        }
+
+        public string GetImageSizeParamMedium()
+        {
+            ApiConfigModel config = GetConfigInfo();
+            int optionsCount = config.images.poster_sizes.Length;
+            string resolutionSelection = config.images.poster_sizes[optionsCount - 3];
+            return resolutionSelection;
+        }
+
+        public string GetImageSizeParamSmall()
+        {
+            ApiConfigModel config = GetConfigInfo();
+            int optionsCount = config.images.poster_sizes.Length;
+            string resolutionSelection = config.images.poster_sizes[optionsCount - 4];
+            return resolutionSelection;
+        }
+
+        public string GetImageSizeParamXSmall()
+        {
+            ApiConfigModel config = GetConfigInfo();
+            int optionsCount = config.images.poster_sizes.Length;
+            string resolutionSelection = config.images.poster_sizes[optionsCount - 5];
+            return resolutionSelection;
+        }
+
+        public string GetImageSizeParamXXSmall()
+        {
+            ApiConfigModel config = GetConfigInfo();
+            int optionsCount = config.images.poster_sizes.Length;
+            string resolutionSelection = config.images.poster_sizes[optionsCount - 6];
+            return resolutionSelection;
         }
     }
 }
